@@ -3,11 +3,11 @@ class Employee
   attr_reader :first_name, :last_name, :input_salary, :input_active
   attr_writer :first_name
 
-  def initialize(input_first_name, input_last_name, input_salary, input_active)
-    @first_name = input_first_name
-    @last_name = input_last_name
-    @salary = input_salary
-    @active = input_active
+  def initialize(input_options)
+    @first_name = input_options[:first_name]
+    @last_name = input_options[:last_name]
+    @salary = input_options[:salary]
+    @active = input_options[:active]
   end
 
   def print_info
@@ -27,14 +27,14 @@ class Employee
   # end
 end
 
-employee1 = Employee.new("Tito", "Burrito", 80000, true)
+employee1 = Employee.new({:first_name => "Tito", :last_name => "Burrito", :salary => 80000, :active => true})
 p employee1.give_annual_raise
 p employee1.print_info
 employee1.first_name=("Pooh")
 p employee1.first_name
 p employee1.print_info
 
-employee2 = Employee.new("Jim", "Joe", 60000, false)
-employee2.print_info
-employee2.give_annual_raise
-employee2.print_info
+# employee2 = Employee.new("Jim", "Joe", 60000, false)
+# employee2.print_info
+# employee2.give_annual_raise
+# employee2.print_info
