@@ -4,14 +4,16 @@ class Employee
     @last_name = input_last_name
     @salary = input_salary
     @active = input_active
-    p 'hello'
   end
 
   def print_info
-    p "#{@first_name} #{@last_name} makes #{@salary} per year and is of #{@active} status."
+    p "#{@first_name} #{@last_name} makes #{@salary} per year "
   end
 
 end
 
-employee = Employee.new("Tito", "Burrito", "80000", "active")
-employee.print_info
+employee1 = Employee.new("Tito", "Burrito", "80000", "active")
+employee1.print_info
+
+employee2 = Employee.new("Jim", "Joe", "60000", "active")
+employee2.print_info
