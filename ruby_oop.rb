@@ -11,7 +11,7 @@ class Employee
   end
 
   def print_info
-    p "#{@first_name} #{@last_name} makes #{@salary.round} per year "
+    "#{@first_name} #{@last_name} makes #{@salary.round} per year "
   end
 
   def give_annual_raise
@@ -28,13 +28,20 @@ class Employee
 end
 
 employee1 = Employee.new({:first_name => "Tito", :last_name => "Burrito", :salary => 80000, :active => true})
-p employee1.give_annual_raise
 p employee1.print_info
+p employee1.give_annual_raise
+
 employee1.first_name=("Pooh")
 p employee1.first_name
 p employee1.print_info
 
-# employee2 = Employee.new("Jim", "Joe", 60000, false)
-# employee2.print_info
-# employee2.give_annual_raise
-# employee2.print_info
+class Manager < Employee #Manager inherits everything from the employee
+  def send_report
+    p 'report sending'
+  end
+end
+
+manager = Manager.new({:first_name => "Huxley", :last_name => "Jones", :salary => 90000, :active => true})
+
+p manager.print_info
+manager.send_report
