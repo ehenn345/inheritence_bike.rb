@@ -35,6 +35,8 @@ employee1.first_name=("Pooh")
 p employee1.first_name
 p employee1.print_info
 
+employee2 = Employee.new({:first_name => "Joe", :last_name => "Bord", :salary => 20000, :active => true})
+
 class Manager < Employee #Manager inherits everything from the employee
   def initialize(input_options)
     super
@@ -47,13 +49,19 @@ class Manager < Employee #Manager inherits everything from the employee
 
   def give_all_raises
     p 'you get a raise'
+    p @employees[0].give_annual_raise
+    p @employees[1].give_annual_raise
   end
 
 end
 
-manager = Manager.new({:first_name => "Huxley", :last_name => "Jones", :salary => 90000, :active => true, :employees => [employee1]})
+manager = Manager.new({:first_name => "Huxley", :last_name => "Jones", :salary => 90000, :active => true, :employees => [employee1, employee2]})
 
-p manager.print_info
-manager.send_report
-p manager
+# p manager.print_info
+# manager.send_report
+# p manager
 manager.give_all_raises
+
+p employee1.print_info
+p employee2.print_info
+
