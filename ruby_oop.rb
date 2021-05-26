@@ -36,12 +36,18 @@ p employee1.first_name
 p employee1.print_info
 
 class Manager < Employee #Manager inherits everything from the employee
+  def initialize(input_options)
+    super
+    @employees = input_options[:employees]
+  end
+  
   def send_report
     p 'report sending'
   end
 end
 
-manager = Manager.new({:first_name => "Huxley", :last_name => "Jones", :salary => 90000, :active => true})
+manager = Manager.new({:first_name => "Huxley", :last_name => "Jones", :salary => 90000, :active => true, :employees => [employee1]})
 
 p manager.print_info
 manager.send_report
+p manager
