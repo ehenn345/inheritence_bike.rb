@@ -49,8 +49,11 @@ class Manager < Employee #Manager inherits everything from the employee
 
   def give_all_raises
     p 'you get a raise'
-    p @employees[0].give_annual_raise
-    p @employees[1].give_annual_raise
+    i = 0
+    while i < @employees.length
+      @employees[i].give_annual_raise
+      i += 1
+    end
   end
 
 end
