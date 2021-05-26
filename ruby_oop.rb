@@ -44,6 +44,11 @@ class Manager < Employee #Manager inherits everything from the employee
   def send_report
     p 'report sending'
   end
+
+  def give_all_raises
+    p 'you get a raise'
+  end
+
 end
 
 manager = Manager.new({:first_name => "Huxley", :last_name => "Jones", :salary => 90000, :active => true, :employees => [employee1]})
@@ -51,3 +56,4 @@ manager = Manager.new({:first_name => "Huxley", :last_name => "Jones", :salary =
 p manager.print_info
 manager.send_report
 p manager
+manager.give_all_raises
